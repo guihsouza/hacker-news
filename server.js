@@ -20,9 +20,9 @@ app.prepare()
     renderAndCache(req, res, '/')
   })
 
-  server.get('/item/:id', (req, res) => {
+  server.get('/detail/:id', (req, res) => {
     const queryParams = { id: req.params.id }
-    renderAndCache(req, res, '/item', queryParams)
+    renderAndCache(req, res, '/detail', queryParams)
   })
 
   server.get('*', (req, res) => {
@@ -50,7 +50,6 @@ async function renderAndCache (req, res, pagePath, queryParams) {
   }
 
   try {
-
     const html = await app.renderToHTML(req, res, pagePath, queryParams)
 
     if (res.statusCode !== 200) {

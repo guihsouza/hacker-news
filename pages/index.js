@@ -1,7 +1,6 @@
 import React from 'react'
-import Link from 'next/link'
 import Firebase from '../services/Firebase'
-import Layout from '../components/Layout'
+import Layout from '../layouts/Default/'
 import Item from '../components/Item'
 import 'isomorphic-unfetch'
 
@@ -15,18 +14,13 @@ export default class extends React.Component {
   }
 
   getItems() {
-    return this.props.ids.map(id => {
-      return (
-        <Item key={id} itemID={id} />
-      )
-    })
+    return this.props.ids.map(id => <Item key={id} itemID={id} />)
   }
 
   render () {
     return (
       <Layout>
         {this.getItems()}
-        <Link prefetch href='/preact'><a>How about preact?</a></Link>
       </Layout>
     )
   }

@@ -1,5 +1,5 @@
 import React from 'react'
-import Firebase from '../services/Firebase'
+import Firebase from '../../services/Firebase'
 import { asyncReactor } from 'async-reactor';
 
 const Loading = () => <h2>Carregando...</h2>
@@ -12,11 +12,7 @@ const Item = async ({ itemID }) => {
 
   return (
     <div>
-      <h2>
-        <a href={item.url}>
-          {item.title}
-        </a>
-      </h2>
+      <p className="content">{item.text}</p>
       <p>{`@${item.by}`}</p>
       <small>Comments: {item.kids.length}</small>
       <hr />
