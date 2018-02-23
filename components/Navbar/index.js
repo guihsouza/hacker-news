@@ -16,17 +16,17 @@ const Links = [{
 }, {
   to: '/jobs',
   title: 'Jobs'
-}];
+}]
 
 const getLinks = () => {
   return Links.map(link => {
     return (
-      <Link href={link.to} key={link.to}>
-        <a className="navbar-item">{link.title}</a>
+      <Link href={ link.to } key={ link.to }>
+        <a className="navbar-item">{ link.title }</a>
       </Link>
     )
   })
-};
+}
 
 const Navbar = () => {
   return (
@@ -46,12 +46,12 @@ const Navbar = () => {
 
         <div id="main-navbar" className="navbar-menu">
           <div className="navbar-end">
-            {getLinks()}
+            { getLinks() }
           </div>
         </div>
       </nav>
     </div>
   )
-};
+}
 
-export default Navbar;
+export default Navbar

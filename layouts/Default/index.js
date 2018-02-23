@@ -3,10 +3,10 @@ import Head from 'next/head'
 import NProgress from 'nprogress'
 import Router from 'next/router'
 import Header from '../../components/Header'
-import bulma from 'bulma/css/bulma.css';
-import '../../static/nprogress.css';
+import bulma from 'bulma/css/bulma.css'
+import '../../static/nprogress.css'
 
-Router.onRouteChangeStart = url => NProgress.start()
+Router.onRouteChangeStart = () => NProgress.start()
 Router.onRouteChangeComplete = () => NProgress.done()
 Router.onRouteChangeError = () => NProgress.done()
 
@@ -19,10 +19,8 @@ export default ({ children, title = 'Hacker News' }) => (
       <style dangerouslySetInnerHTML={{ __html: bulma }} />
     </Head>
 
-    <Header title={title} />
+    <Header title={ title } />
 
-    <main className="container">
-      { children }
-    </main>
+    { children }
   </div>
 )

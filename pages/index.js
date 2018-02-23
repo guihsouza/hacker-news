@@ -14,13 +14,13 @@ export default class extends React.Component {
   }
 
   getItems() {
-    return this.props.ids.map(id => <Item key={id} itemID={id} />)
+    return this.props.ids.map(id => <Item key={ id } itemID={ id } />)
   }
 
   render () {
     return (
       <Layout>
-        {this.getItems()}
+        { this.getItems() }
       </Layout>
     )
   }

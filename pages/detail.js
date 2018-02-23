@@ -8,7 +8,7 @@ import 'isomorphic-unfetch'
 export default class extends React.Component {
   static async getInitialProps ({ query: { id } }) {
     // eslint-disable-next-line no-undef
-    const fs = Firebase.child(`item/${id}`).once('value')
+    const fs = Firebase.child(`item/${ id }`).once('value')
     const item = await fs
 
     return { item: item.val() }
@@ -18,12 +18,11 @@ export default class extends React.Component {
     const { item } = this.props
 
     return (
-      <Layout>
+      <Layout title={ item.title }>
         <div className="section">
-          <h1 className="title">{item.title}</h1>
-          <p>{item.by}</p>
-          <p>{item.score}</p>
-          <ListComments commentsId={item.kids} />
+          <p>{ item.by }</p>
+          <p>{ item.score }</p>
+          <ListComments commentsId={ item.kids } />
         </div>
       </Layout>
     )
