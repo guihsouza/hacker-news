@@ -1,28 +1,27 @@
 import React from 'react'
-import Firebase from '../services/Firebase'
+import HeaderItem from '../components/HeaderItem'
 import Layout from '../layouts/Default/'
-import Item from '../components/Item'
 import ListComments from '../components/ListComments'
 import 'isomorphic-unfetch'
 
 export default class extends React.Component {
   static async getInitialProps ({ query: { id } }) {
     // eslint-disable-next-line no-undef
-    const fs = Firebase.child(`item/${ id }`).once('value')
-    const item = await fs
-
-    return { item: item.val() }
+    const res = await fetch(`https://api.hackerwebapp.com/item/${id}`)
+    const json = await res.json()
+    return { item: json }
   }
 
   render () {
     const { item } = this.props
 
     return (
-      <Layout title={ item.title }>
+      <Layout>
+        <HeaderItem item={ item } />
         <div className="section">
-          <p>{ item.by }</p>
-          <p>{ item.score }</p>
-          <ListComments commentsId={ item.kids } />
+          <div className="container">
+            <ListComments comments={ item.comments } />
+          </div>
         </div>
       </Layout>
     )

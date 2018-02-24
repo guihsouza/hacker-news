@@ -1,18 +1,18 @@
 import React from 'react'
 import Comment from '../Comment'
-import Loading from '../Loading'
-import { asyncReactor } from 'async-reactor'
 
-const getItems = commentsId => {
-  return commentsId.map(id => <Comment key={ id } itemID={ id } />)
+export default class extends React.Component {
+  renderComments() {
+    const { comments } = this.props
+
+    return comments.map((item, i) => <Comment key={i} item={item} />)
+  }
+
+  render() {
+    return (
+      <div>
+        {this.renderComments()}
+      </div>
+    )
+  }
 }
-
-const ListComments = async ({ commentsId }) => {
-  return (
-    <div>
-      { getItems(commentsId) }
-    </div>
-  )
-}
-
-export default asyncReactor(ListComments, Loading)

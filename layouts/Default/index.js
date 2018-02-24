@@ -1,6 +1,5 @@
 import Link from 'next/link'
 import Head from 'next/head'
-import Header from '../../components/Header'
 import stylesheet from 'styles/index.scss'
 
 export default ({ children, title = 'Hacker News' }) => (
@@ -12,8 +11,18 @@ export default ({ children, title = 'Hacker News' }) => (
       <style dangerouslySetInnerHTML={{ __html: stylesheet }} />
     </Head>
 
-    <Header title={ title } />
-
     { children }
+
+    <footer className="footer">
+      <div className="container">
+        <div className="content has-text-centered">
+          <p>
+            <strong>Hacker News</strong>
+            <br/>
+            Copyright &copy; - { new Date().getFullYear() }
+          </p>
+        </div>
+      </div>
+    </footer>
   </div>
 )

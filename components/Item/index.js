@@ -1,39 +1,30 @@
 import React from 'react'
 import Link from 'next/link'
-import Loading from '../Loading'
-import Firebase from '../../services/Firebase'
-import { asyncReactor } from 'async-reactor'
 
-const ErrorH = e => {
-  console.log(e)
-  return <h2>Erro</h2>
-}
-
-const Item = async ({ itemID }) => {
-  // eslint-disable-next-line no-undef
-  const fs = Firebase.child(`item/${ itemID }`).once('value')
-  const res = await fs
-  const item = res.val()
-
-  return (
-    <div className="hero">
-      <div className="hero-body">
-        <div className="container">
-          <h2 className="title">
-            <a href={ item.url }>{ item.title }</a>
-          </h2>
-          <p className="subtitle">{`@${ item.by }`}</p>
-          <p>
-            <small>
-              <Link href={`detail/${ item.id }`}>
-                <a>Comments: { typeof item.kids !== 'undefined' ? item.kids.length : 0 }</a>
-              </Link>
-            </small>
-          </p>
-        </div>
+export default ({ item }) => (
+  <article className="media">
+    <figure className="media-left">
+      <p className="image is-48x48 has-text-centered is-size-4">
+        { item.points }
+      </p>
+    </figure>
+    <div className="media-content is-visible">
+      <div className="content">
+        <h2 className="title is-4">
+          <Link href={ item.url }>
+            <a target="_blank">{ item.title }</a>
+          </Link>
+        </h2>
+        <p className="subtitle is-6">
+          <Link href={`detail/${ item.id }`}>
+            <a>{ item.comments_count } comments</a>
+          </Link>
+          {` | `}
+          <strong className="has-text-grey-dark">{ `@${item.user}` }</strong>
+          {` | `}
+          <small>{ item.time_ago }</small>
+        </p>
       </div>
     </div>
-  )
-}
-
-export default asyncReactor(Item, Loading, ErrorH)
+  </article>
+)

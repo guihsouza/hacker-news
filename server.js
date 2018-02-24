@@ -17,7 +17,22 @@ app.prepare()
   const server = express()
 
   server.get('/', (req, res) => {
-    renderAndCache(req, res, '/')
+    const queryParams = {
+      type: 'news',
+      page: 1
+    }
+
+    renderAndCache(req, res, '/list', queryParams)
+  })
+
+  server.get(/^\/(news|newest|ask|show|jobs|best)$/, (req, res) => {
+    const base = req.params[0];
+    const page = req.query.page ? req.query.page : 1;
+    const queryParams = {
+      type: base,
+      page: page
+    }
+    renderAndCache(req, res, '/list', queryParams)
   })
 
   server.get('/detail/:id', (req, res) => {
