@@ -21,7 +21,7 @@ const Links = [{
 const getLinks = () => {
   return Links.map(link => {
     return (
-      <Link href={ link.to } key={ link.to } prefetch>
+      <Link href={ link.to } key={ link.to }>
         <a className="navbar-item">{ link.title }</a>
       </Link>
     )
