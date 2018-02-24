@@ -1,11 +1,5 @@
 import React from 'react'
-import toMarkdown from 'to-markdown'
-import marked from 'marked'
 import ListComments from '../ListComments'
-
-const getContent = content => {
-  return marked(toMarkdown(content), {sanitize: true})
-}
 
 export default ({ item }) => (
   <article className="media">
@@ -24,10 +18,8 @@ export default ({ item }) => (
           <span className="has-text-grey">
             { item.time_ago }
           </span>
-          <br/>
-          <span className="has-text-grey" dangerouslySetInnerHTML={{ __html: getContent(item.content) }}></span>
-          <br/>
         </p>
+        <div className="has-text-grey comment" dangerouslySetInnerHTML={{ __html: item.content }}></div>
       </div>
       <ListComments comments={item.comments} />
     </div>
