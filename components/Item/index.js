@@ -16,11 +16,15 @@ export default ({ item }) => (
           </Link>
         </h2>
         <p className="subtitle is-6">
-          <Link href={`detail/${ item.id }`}>
+          <Link href={`/detail/${ item.id }`}>
             <a>{ item.comments_count } comments</a>
           </Link>
           {` | `}
-          <strong className="has-text-grey-dark">{ `@${item.user}` }</strong>
+          <strong className="has-text-grey-dark">
+            <Link href={`/user/${ item.user }`}>
+              <a>{ `@${item.user}` }</a>
+            </Link>
+          </strong>
           {` | `}
           <small>{ item.time_ago }</small>
         </p>

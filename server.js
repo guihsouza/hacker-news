@@ -18,7 +18,7 @@ app.prepare()
 
   server.get('/', (req, res) => {
     const queryParams = {
-      type: 'news',
+      type: 'best',
       page: 1
     }
 
@@ -38,6 +38,11 @@ app.prepare()
   server.get('/detail/:id', (req, res) => {
     const queryParams = { id: req.params.id }
     renderAndCache(req, res, '/detail', queryParams)
+  })
+
+  server.get('/user/:id', (req, res) => {
+    const queryParams = { id: req.params.id }
+    renderAndCache(req, res, '/user', queryParams)
   })
 
   server.get('*', (req, res) => {

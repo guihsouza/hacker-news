@@ -1,7 +1,7 @@
 import React from 'react'
 import Link from 'next/link'
 import Header from '../components/Header'
-import Layout from '../layouts/Default/'
+import Layout from '../components/Layout'
 import Item from '../components/Item'
 import 'isomorphic-unfetch'
 

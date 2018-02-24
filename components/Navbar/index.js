@@ -2,8 +2,8 @@ import React from 'react'
 import Link from 'next/link'
 
 const Links = [{
-  to: '/',
-  title: 'Story'
+  to: '/best',
+  title: 'Best'
 }, {
   to: '/news',
   title: 'News'
@@ -33,7 +33,7 @@ export default () => (
     <div className="navbar" />
     <nav className="navbar is-link is-fixed-top">
       <div className="navbar-brand">
-        <Link href="/">
+        <Link href="/best">
           <a className="navbar-item">Hacker news</a>
         </Link>
         <div className="navbar-burger burger" data-target="main-navbar">

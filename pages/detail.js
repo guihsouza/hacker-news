@@ -1,6 +1,6 @@
 import React from 'react'
 import HeaderItem from '../components/HeaderItem'
-import Layout from '../layouts/Default/'
+import Layout from '../components/Layout'
 import ListComments from '../components/ListComments'
 import 'isomorphic-unfetch'
 
