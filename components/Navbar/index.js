@@ -28,26 +28,44 @@ const getLinks = () => {
   })
 }
 
-export default () => (
-  <div>
-    <div className="navbar" />
-    <nav className="navbar is-link is-fixed-top">
-      <div className="navbar-brand">
-        <Link href="/best">
-          <a className="navbar-item">Hacker news</a>
-        </Link>
-        <div className="navbar-burger burger" data-target="main-navbar">
-          <span></span>
-          <span></span>
-          <span></span>
-        </div>
-      </div>
+export default class extends React.PureComponent {
+  constructor(props) {
+    super(props)
 
-      <div id="main-navbar" className="navbar-menu">
-        <div className="navbar-end">
-          { getLinks() }
-        </div>
+    this.state = {
+      isActive: false
+    }
+
+    this.toggleNavbar.bind(this)
+  }
+
+  toggleNavbar() {
+    this.setState({isActive: !this.state.isActive})
+  }
+
+  render() {
+    return (
+      <div>
+        <div className="navbar" />
+        <nav className="navbar is-link is-fixed-top">
+          <div className="navbar-brand">
+            <Link href="/best">
+              <a className="navbar-item">Hacker news</a>
+            </Link>
+            <div className={(this.state.isActive ? 'is-active' : '') + ' navbar-burger burger'} data-target="main-navbar" onClick={() => this.toggleNavbar()}>
+              <span></span>
+              <span></span>
+              <span></span>
+            </div>
+          </div>
+
+          <div id="main-navbar" className={(this.state.isActive ? 'is-active' : '') + ' navbar-menu'}>
+            <div className="navbar-end">
+              { getLinks() }
+            </div>
+          </div>
+        </nav>
       </div>
-    </nav>
-  </div>
-)
+    )
+  }
+}
