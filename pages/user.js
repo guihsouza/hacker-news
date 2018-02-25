@@ -16,8 +16,6 @@ export default class extends React.Component {
   render () {
     const { item } = this.props
 
-    console.log(item)
-
     return (
       <Layout>
         <Header title={`@${item.id}`} />

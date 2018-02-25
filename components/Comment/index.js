@@ -1,4 +1,5 @@
 import React from 'react'
+import Link from 'next/link'
 import ListComments from '../ListComments'
 
 export default ({ item }) => (
@@ -12,7 +13,9 @@ export default ({ item }) => (
       <div className="content">
         <p>
           <strong>
-            {item.user}
+            <Link href={`/user/${ item.user }`}>
+              <a>{ `@${item.user}` }</a>
+            </Link>
           </strong>
           { ` | ` }
           <span className="has-text-grey-dark">
