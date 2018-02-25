@@ -54,7 +54,7 @@ app.prepare()
 
     const rootStaticFiles = [
       '/sw.js',
-      '/favicon.png',
+      '/favicon.jpg',
       '/manifest.json'
     ]
 

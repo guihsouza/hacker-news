@@ -28,7 +28,7 @@ export default class extends React.PureComponent {
           <meta name='viewport' content='initial-scale=1.0, width=device-width' />
           <meta name="theme-color" content="#3273dc" />
           <link rel="manifest" href="/manifest.json" />
-          <link rel="shortcut icon" href="/favicon.png" />
+          <link rel="icon" type="image/jpeg" href="/favicon.jpg" />
           <style dangerouslySetInnerHTML={{ __html: stylesheet }} />
         </Head>
 
