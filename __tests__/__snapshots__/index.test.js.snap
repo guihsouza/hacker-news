@@ -1,0 +1,144 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`With Snapshot Testing List shows 1`] = `
+<div>
+  <div>
+    <div>
+      <div
+        className="navbar"
+      />
+      <nav
+        className="navbar is-link is-fixed-top"
+      >
+        <div
+          className="navbar-brand"
+        >
+          <a
+            className="navbar-item"
+            href="/best"
+            onClick={[Function]}
+          >
+            Hacker news
+          </a>
+          <div
+            className=" navbar-burger burger"
+            data-target="main-navbar"
+            onClick={[Function]}
+          >
+            <span />
+            <span />
+            <span />
+          </div>
+        </div>
+        <div
+          className=" navbar-menu"
+          id="main-navbar"
+        >
+          <div
+            className="navbar-end"
+          >
+            <a
+              className="navbar-item"
+              href="/best"
+              onClick={[Function]}
+            >
+              Best
+            </a>
+            <a
+              className="navbar-item"
+              href="/news"
+              onClick={[Function]}
+            >
+              News
+            </a>
+            <a
+              className="navbar-item"
+              href="/show"
+              onClick={[Function]}
+            >
+              Show
+            </a>
+            <a
+              className="navbar-item"
+              href="/ask"
+              onClick={[Function]}
+            >
+              Ask
+            </a>
+            <a
+              className="navbar-item"
+              href="/jobs"
+              onClick={[Function]}
+            >
+              Jobs
+            </a>
+          </div>
+        </div>
+      </nav>
+    </div>
+    <header
+      className="hero is-link"
+    >
+      <div
+        className="hero-body"
+      >
+        <div
+          className="container has-text-centered"
+        >
+          <h1
+            className="title is-capitalized"
+          />
+        </div>
+      </div>
+    </header>
+  </div>
+  <div
+    className="section"
+  >
+    <div
+      className="container"
+    />
+  </div>
+  <div
+    className="section"
+  >
+    <div
+      className="container"
+    >
+      <div
+        className="columns"
+      >
+        <div
+          className="column is-2"
+        >
+          <nav
+            aria-label="pagination"
+            className="pagination is-right"
+            role="navigation"
+          />
+        </div>
+      </div>
+    </div>
+  </div>
+  <footer
+    className="footer"
+  >
+    <div
+      className="container"
+    >
+      <div
+        className="content has-text-centered"
+      >
+        <p>
+          <strong>
+            Hacker News
+          </strong>
+          <br />
+          Copyright © - 
+          2018
+        </p>
+      </div>
+    </div>
+  </footer>
+</div>
+`;
