@@ -12,7 +12,7 @@ export default ({ item }) => (
       <div className="content">
         <h2 className="title is-4">
           <Link href={ item.url }>
-            <a target="_blank">{ item.title }</a>
+            <a target="_blank" rel="noopener">{ item.title }</a>
           </Link>
         </h2>
         <p className="subtitle is-6">

@@ -1,4 +1,7 @@
 const express = require('express')
+const { parse } = require('url');
+const { join } = require('path')
+const { createReadStream } = require('fs');
 const next = require('next')
 const LRUCache = require('lru-cache')
 
@@ -46,7 +49,22 @@ app.prepare()
   })
 
   server.get('*', (req, res) => {
-    return handle(req, res)
+    const parsedUrl = parse(req.url, true);
+    const { pathname } = parsedUrl;
+
+    const rootStaticFiles = [
+      '/sw.js',
+      '/favicon.ico',
+      '/manifest.json'
+    ]
+
+    if (rootStaticFiles.indexOf(parsedUrl.pathname) > -1) {
+      res.setHeader('content-type', 'text/javascript');
+      const path = join(__dirname, 'static', pathname);
+      createReadStream(path).pipe(res);
+    } else {
+      return handle(req, res)
+    }
   })
 
   server.listen(port, (err) => {
