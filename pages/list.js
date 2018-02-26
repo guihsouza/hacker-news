@@ -21,12 +21,15 @@ export default class extends React.Component {
 
   getItems() {
     const { items } = this.props;
+
+    if (!items.length) return <h3 className="title has-text-centered">Nothing Found...</h3>
+
     return items.map((item, i) => <Item key={ i } item={ item } />)
   }
 
   getPaginationPrev() {
     if (!this.props.prevLink) return null;
-    if (!this.props.items) return null;
+    if (!this.props.items.length) return null;
 
     return (
       <Link href={this.props.prevLink}>
@@ -37,7 +40,7 @@ export default class extends React.Component {
 
   getPaginationNext() {
     if (!this.props.nextLink) return null;
-    if (!this.props.items) return null;
+    if (!this.props.items.length) return null;
 
     return (
       <Link href={this.props.nextLink}>

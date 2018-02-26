@@ -1,0 +1,54 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`With Snapshot Testing Comment shows 1`] = `
+<article
+  className="media"
+>
+  <figure
+    className="media-left"
+  >
+    <p
+      className="image is-64x64"
+    >
+      <img
+        alt="Default image for user @usermock"
+        src="/static/images/user-default.jpg"
+      />
+    </p>
+  </figure>
+  <div
+    className="media-content"
+  >
+    <div
+      className="content"
+    >
+      <p>
+        <strong>
+          <a
+            className="user"
+            href="/user/usermock"
+            onClick={[Function]}
+          >
+            @usermock
+          </a>
+        </strong>
+         | 
+        <span
+          className="has-text-grey-dark"
+        >
+          22 minutes ago
+        </span>
+      </p>
+      <div
+        className="has-text-grey-dark comment"
+        dangerouslySetInnerHTML={
+          Object {
+            "__html": "Comment's description.",
+          }
+        }
+      />
+    </div>
+    <div />
+  </div>
+</article>
+`;

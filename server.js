@@ -59,7 +59,6 @@ app.prepare()
     ]
 
     if (rootStaticFiles.indexOf(parsedUrl.pathname) > -1) {
-      res.setHeader('content-type', 'text/javascript');
       const path = join(__dirname, 'static', pathname);
       createReadStream(path).pipe(res);
     } else {

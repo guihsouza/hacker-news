@@ -97,7 +97,67 @@ exports[`With Snapshot Testing List shows 1`] = `
   >
     <div
       className="container"
-    />
+    >
+      <article
+        className="media"
+      >
+        <figure
+          className="media-left"
+        >
+          <p
+            className="image is-48x48 has-text-centered is-size-4"
+          >
+            105
+          </p>
+        </figure>
+        <div
+          className="media-content is-visible"
+        >
+          <div
+            className="content"
+          >
+            <h2
+              className="title is-4"
+            >
+              <a
+                href="http://review.chicagobooth.edu/behavioral-science/2018/article/how-poverty-changes-your-mind-set"
+                onClick={[Function]}
+                rel="noopener"
+                target="_blank"
+              >
+                How poverty changes your mindset
+              </a>
+            </h2>
+            <p
+              className="subtitle is-6"
+            >
+              <a
+                href="/detail/16461773"
+                onClick={[Function]}
+              >
+                27
+                 comments
+              </a>
+               | 
+              <strong
+                className="has-text-grey-dark"
+              >
+                <a
+                  href="/user/bryanwbh"
+                  onClick={[Function]}
+                >
+                  @bryanwbh
+                </a>
+              </strong>
+               | 
+              <small>
+                2 hours ago
+              </small>
+            </p>
+          </div>
+        </div>
+      </article>
+    </div>
   </div>
   <div
     className="section"
