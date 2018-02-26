@@ -3,14 +3,13 @@ import HeaderItem from '../components/HeaderItem'
 import Layout from '../components/Layout'
 import Header from '../components/Header'
 import ListComments from '../components/ListComments'
-import 'isomorphic-unfetch'
+import { fetchUser } from '../util/HNService'
 
 export default class extends React.Component {
   static async getInitialProps ({ query: { id } }) {
-    // eslint-disable-next-line no-undef
-    const res = await fetch(`https://api.hackerwebapp.com/user/${id}`)
-    const json = await res.json()
-    return { item: json }
+    const user = await fetchUser(id)
+
+    return { item: user }
   }
 
   render () {

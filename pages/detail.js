@@ -2,14 +2,12 @@ import React from 'react'
 import HeaderItem from '../components/HeaderItem'
 import Layout from '../components/Layout'
 import ListComments from '../components/ListComments'
-import 'isomorphic-unfetch'
+import { fetchItem } from '../util/HNService'
 
 export default class extends React.Component {
   static async getInitialProps ({ query: { id } }) {
-    // eslint-disable-next-line no-undef
-    const res = await fetch(`https://api.hackerwebapp.com/item/${id}`)
-    const json = await res.json()
-    return { item: json }
+    const detail = await fetchItem(id)
+    return { item: detail }
   }
 
   render () {

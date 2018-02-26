@@ -3,19 +3,17 @@ import Link from 'next/link'
 import Header from '../components/Header'
 import Layout from '../components/Layout'
 import Item from '../components/Item'
-import 'isomorphic-unfetch'
+import { fetchStories } from '../util/HNService'
 
 export default class extends React.Component {
   static async getInitialProps ({ query: { type, page } }) {
-    // eslint-disable-next-line no-undef
-    const res = await fetch(`https://api.hackerwebapp.com/${type}?page=${page}`)
-    const json = await res.json()
+    const list = await fetchStories(type, page)
 
     return {
       prevLink: page > 1 ? `/${type}?page=${(parseInt(page) - 1)}` : null,
       nextLink: page < 10 ? `/${type}?page=${(parseInt(page) + 1)}` : null,
       pageTitle: type,
-      items: json
+      items: list
     }
   }
 
