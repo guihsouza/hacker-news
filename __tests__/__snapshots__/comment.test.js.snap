@@ -2,7 +2,7 @@
 
 exports[`With Snapshot Testing Comment shows 1`] = `
 <article
-  className="media"
+  className="level-1 media"
 >
   <figure
     className="media-left"
@@ -34,7 +34,7 @@ exports[`With Snapshot Testing Comment shows 1`] = `
         </strong>
          | 
         <span
-          className="has-text-grey-dark"
+          className="has-text-grey-dark time"
         >
           22 minutes ago
         </span>
@@ -49,6 +49,110 @@ exports[`With Snapshot Testing Comment shows 1`] = `
       />
     </div>
     <div />
+  </div>
+</article>
+`;
+
+exports[`With Snapshot Testing Comment shows with children 1`] = `
+<article
+  className="level-1 media"
+>
+  <figure
+    className="media-left"
+  >
+    <p
+      className="image is-64x64"
+    >
+      <img
+        alt="Default image for user @usermock"
+        src="/static/images/user-default.jpg"
+      />
+    </p>
+  </figure>
+  <div
+    className="media-content"
+  >
+    <div
+      className="content"
+    >
+      <p>
+        <strong>
+          <a
+            className="user"
+            href="/user/usermock"
+            onClick={[Function]}
+          >
+            @usermock
+          </a>
+        </strong>
+         | 
+        <span
+          className="has-text-grey-dark time"
+        >
+          22 minutes ago
+        </span>
+      </p>
+      <div
+        className="has-text-grey-dark comment"
+        dangerouslySetInnerHTML={
+          Object {
+            "__html": "Comment's description.",
+          }
+        }
+      />
+    </div>
+    <div>
+      <article
+        className="level-1 media"
+      >
+        <figure
+          className="media-left"
+        >
+          <p
+            className="image is-64x64"
+          >
+            <img
+              alt="Default image for user @usermock2"
+              src="/static/images/user-default.jpg"
+            />
+          </p>
+        </figure>
+        <div
+          className="media-content"
+        >
+          <div
+            className="content"
+          >
+            <p>
+              <strong>
+                <a
+                  className="user"
+                  href="/user/usermock2"
+                  onClick={[Function]}
+                >
+                  @usermock2
+                </a>
+              </strong>
+               | 
+              <span
+                className="has-text-grey-dark time"
+              >
+                22 minutes ago
+              </span>
+            </p>
+            <div
+              className="has-text-grey-dark comment"
+              dangerouslySetInnerHTML={
+                Object {
+                  "__html": "Comment's description.",
+                }
+              }
+            />
+          </div>
+          <div />
+        </div>
+      </article>
+    </div>
   </div>
 </article>
 `;

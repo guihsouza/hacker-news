@@ -6,7 +6,7 @@ const Comment = ({ item }) => {
   if (!item) return <h2>Carregando...</h2>
 
   return (
-    <article className="media">
+    <article className={`level-${item.level} media`}>
       <figure className="media-left">
         <p className="image is-64x64">
           <img src="/static/images/user-default.jpg" alt={`Default image for user @${item.user}`} />
@@ -21,7 +21,7 @@ const Comment = ({ item }) => {
               </Link>
             </strong>
             { ` | ` }
-            <span className="has-text-grey-dark">
+            <span className="has-text-grey-dark time">
               { item.time_ago }
             </span>
           </p>
