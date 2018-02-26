@@ -1,5 +1,7 @@
 # Hacker News App
 
+[![Build Status](https://travis-ci.org/guihsouza/hacker-news.svg?branch=master)](https://travis-ci.org/guihsouza/hacker-news)
+
 Aplicação teste baseada na aplicação Hacker News utilizando NextJS, React Server Render, SSR Cache e Service workers
 
 ## Index
