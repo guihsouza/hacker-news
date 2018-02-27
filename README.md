@@ -8,18 +8,52 @@ Aplicação teste baseada na aplicação Hacker News utilizando NextJS, React Se
 
 - [Dependências](#dependências)
 - [Instalando dependências](#instalando-dependências)
+- [Instalando pacotes](#instalando-pacotes)
 - [Executando a aplicação](#executando-a-aplicação)
 - [Executando rotinas de testes](#executando-rotinas-de-testes)
 
 ## Dependências
 
-- Node JS
+- NodeJS 8+
 - Yarn
 
 ## Instalando dependências
 
-Utilize o terminal para realizar a instalação das dependências da aplicação.
-Acesso o diretório do projeto e execute o seguinte comando
+### Linux/MacOS
+
+```bash
+$ wget -qO- https://raw.githubusercontent.com/creationix/nvm/v0.33.8/install.sh | bash
+```
+
+Adicione a seguinte linha em seu arquivo `.bashrc`
+
+```bash
+export NVM_DIR="$HOME/.nvm"
+[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh" # This loads nvm
+```
+
+Instale a última versão do NodeJS
+
+```bash
+$ nvm install node
+```
+
+Instale o pacote do Yarn
+
+```bash
+$ nvm install -g yarn
+```
+
+Adicione a pasta de executáveis do Yarn ao `PATH` do sistema
+
+```bash
+export PATH="$HOME/.yarn/bin:$PATH"
+```
+
+## Instalando pacotes
+
+Utilize o terminal para realizar a instalação dos pacotes da aplicação.
+Acesse o diretório do projeto e execute o seguinte comando
 
 ```bash
 $ yarn
