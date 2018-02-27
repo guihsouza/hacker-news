@@ -10,6 +10,12 @@ export default class extends React.Component {
     return { item: detail }
   }
 
+  getComments(item) {
+    if (typeof item.comments == 'undefined') return <h2 className="subtitle has-text-centered">0 comments</h2>
+
+    return <ListComments comments={ item.comments } />
+  }
+
   render () {
     const { item } = this.props
 
@@ -18,7 +24,7 @@ export default class extends React.Component {
         <HeaderItem item={ item } />
         <div className="section">
           <div className="container">
-            <ListComments comments={ item.comments } />
+            {this.getComments(item)}
           </div>
         </div>
       </Layout>

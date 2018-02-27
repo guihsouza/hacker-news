@@ -48,7 +48,11 @@ exports[`With Snapshot Testing Comment shows 1`] = `
         }
       />
     </div>
-    <div />
+    <div>
+      <h2>
+        Nothing found
+      </h2>
+    </div>
   </div>
 </article>
 `;
@@ -149,7 +153,11 @@ exports[`With Snapshot Testing Comment shows with children 1`] = `
               }
             />
           </div>
-          <div />
+          <div>
+            <h2>
+              Nothing found
+            </h2>
+          </div>
         </div>
       </article>
     </div>

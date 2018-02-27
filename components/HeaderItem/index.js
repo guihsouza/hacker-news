@@ -7,7 +7,7 @@ export default ({ item }) => (
     <div>
       <h3 className="subtitle">
         <Link href={`/user/${ item.user }`}>
-          <a>{ `@${item.user}` }</a>
+          <a>@{item.user}</a>
         </Link>
       </h3>
       <a href={ item.url } className="button is-white" target="_blank" rel="noopener">View story</a>

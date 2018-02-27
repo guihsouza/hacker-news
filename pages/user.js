@@ -17,7 +17,7 @@ export default class extends React.Component {
 
     return (
       <Layout>
-        <Header title={`@${item.id}`} />
+        <Header title={item.id} />
         <div className="section">
           <div className="container">
             { item.about
