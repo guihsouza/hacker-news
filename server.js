@@ -57,6 +57,10 @@ app.prepare().then(() => {
       '/manifest.json'
     ]
 
+    if (pathname == '/sw.js') {
+      res.setHeader('content-type', 'text/javascript');
+    }
+    
     if (rootStaticFiles.indexOf(parsedUrl.pathname) > -1) {
       const path = join(__dirname, 'static', pathname);
       createReadStream(path).pipe(res);
