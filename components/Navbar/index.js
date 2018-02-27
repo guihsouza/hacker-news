@@ -1,42 +1,44 @@
 import React from 'react'
 import Link from 'next/link'
 
-const Links = [{
-  to: '/best',
-  title: 'Best'
-}, {
-  to: '/news',
-  title: 'News'
-}, {
-  to: '/show',
-  title: 'Show'
-}, {
-  to: '/ask',
-  title: 'Ask'
-}, {
-  to: '/jobs',
-  title: 'Jobs'
-}]
-
-const getLinks = () => {
-  return Links.map(link => {
-    return (
-      <Link href={ link.to } key={ link.to }>
-        <a className="navbar-item">{ link.title }</a>
-      </Link>
-    )
-  })
-}
-
 export default class extends React.PureComponent {
   constructor(props) {
     super(props)
 
     this.state = {
-      isActive: false
+      isActive: false,
+      items: [{
+        to: '/best',
+        title: 'Best'
+      }, {
+        to: '/news',
+        title: 'News'
+      }, {
+        to: '/show',
+        title: 'Show'
+      }, {
+        to: '/ask',
+        title: 'Ask'
+      }, {
+        to: '/jobs',
+        title: 'Jobs'
+      }]
     }
 
-    this.toggleNavbar.bind(this)
+    this.getLinks = this.getLinks.bind(this)
+    this.toggleNavbar = this.toggleNavbar.bind(this)
+  }
+
+  getLinks() {
+    const { items } = this.state
+
+    return items.map(item => {
+      return (
+        <Link href={ item.to } key={ item.to }>
+          <a className="navbar-item">{ item.title }</a>
+        </Link>
+      )
+    })
   }
 
   toggleNavbar() {
@@ -50,7 +52,7 @@ export default class extends React.PureComponent {
         <nav className="navbar is-link is-fixed-top">
           <div className="navbar-brand">
             <Link href="/best">
-              <a className="navbar-item">Hacker news</a>
+              <a className="navbar-item">Hacker News</a>
             </Link>
             <div className={(this.state.isActive ? 'is-active' : '') + ' navbar-burger burger'} data-target="main-navbar" onClick={() => this.toggleNavbar()}>
               <span></span>
@@ -61,7 +63,7 @@ export default class extends React.PureComponent {
 
           <div id="main-navbar" className={(this.state.isActive ? 'is-active' : '') + ' navbar-menu'}>
             <div className="navbar-end">
-              { getLinks() }
+              { this.getLinks() }
             </div>
           </div>
         </nav>
