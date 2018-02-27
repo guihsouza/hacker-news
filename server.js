@@ -15,8 +15,7 @@ const ssrCache = new LRUCache({
   maxAge: 1000 * 60 * 60
 })
 
-app.prepare()
-.then(() => {
+app.prepare().then(() => {
   const server = express()
 
   server.get('/', (req, res) => {
@@ -28,7 +27,7 @@ app.prepare()
     renderAndCache(req, res, '/list', queryParams)
   })
 
-  server.get(/^\/(news|newest|ask|show|jobs|best)$/, (req, res) => {
+  server.get(/^\/(news|ask|show|jobs|best)$/, (req, res) => {
     const base = req.params[0];
     const page = req.query.page ? req.query.page : 1;
     const queryParams = {
@@ -66,19 +65,16 @@ app.prepare()
     }
   })
 
-  server.listen(port, (err) => {
+  server.listen(port, err => {
     if (err) throw err
-    console.log(`> Ready on http://localhost:${port}`)
+    console.log(`Running on http://localhost:${port}`)
   })
 })
 
-function getCacheKey (req) {
-  return `${req.url}`
-}
+const getCacheKey = req => `${req.url}`
 
-async function renderAndCache (req, res, pagePath, queryParams) {
+const renderAndCache = async (req, res, pagePath, queryParams) => {
   const key = getCacheKey(req)
-
 
   if (ssrCache.has(key)) {
     res.setHeader('x-cache', 'HIT')
